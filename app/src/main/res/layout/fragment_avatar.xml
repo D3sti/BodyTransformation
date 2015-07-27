@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:baselineAligned="false">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="left|top"
+        android:layout_weight="1">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/img_avatar_bodyview"
+            android:layout_margin="15dp"
+            android:focusableInTouchMode="false"
+            android:contentDescription="@string/img_avatareDescrContent"
+            android:cropToPadding="true"
+            android:src="@mipmap/ic_launcher"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:baselineAligned="false"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="15dp"
+            android:baselineAligned="false"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/layer_avatar_headers">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/lb_avatareBodyAge"
+                    android:id="@+id/txv_bodyage"
+                    android:layout_margin="5dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/lb_avatareBodyWeight"
+                    android:id="@+id/txv_bodyweight"
+                    android:layout_margin="5dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/lb_avatareBodyHeight"
+                    android:id="@+id/txv_bodyheight"
+                    android:layout_margin="5dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:id="@+id/layer_avatar_results">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/lb_avatareResultBodyWeight"
+                    android:id="@+id/txv_resultbodyweight"
+                    android:layout_margin="5dp"
+                    android:hint="@string/lb_no_value" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/lb_avatareResultBodyWeight"
+                    android:id="@+id/txv_resultbodyheight"
+                    android:layout_margin="5dp"
+                    android:hint="@string/lb_no_value" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/lb_avatareResultBodyHeight"
+                    android:id="@+id/txv_resultbodyage"
+                    android:layout_margin="5dp"
+                    android:password="false"
+                    android:hint="@string/lb_no_value" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/btn_addNewStatus"
+                android:layout_margin="15dp"
+                android:textColor="@android:color/holo_orange_dark"
+                android:text="@string/btn_addNewState"
+                android:textColorHighlight="@android:color/holo_orange_light"
+                android:textColorHint="@android:color/holo_orange_dark"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

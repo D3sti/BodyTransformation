@@ -2,6 +2,7 @@ package com.example.antihacker.bodytransformation;
 
 import java.util.Locale;
 
+import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -18,8 +19,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import fragments.AvatarFragment;
+import fragments.BodyViewFragment;
+import fragments.InputFragment;
 
-public class MainActivity extends ActionBarActivity {
+
+public class MainActivity extends ActionBarActivity implements
+        InputFragment.OnFragmentInteractionListener,
+        AvatarFragment.OnFragmentInteractionListener,
+        BodyViewFragment.OnFragmentInteractionListener {
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -75,6 +83,11 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
+    }
+
 
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
@@ -90,6 +103,16 @@ public class MainActivity extends ActionBarActivity {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
+
+            //Open Fragments
+            switch (position) {
+                case 0:
+                    return AvatarFragment.newInstance("A","B");
+                case 1:
+                    return BodyViewFragment.newInstance("A", "B");
+                case 2:
+                    return InputFragment.newInstance("A", "B");
+            }
             return PlaceholderFragment.newInstance(position + 1);
         }
 
@@ -142,7 +165,9 @@ public class MainActivity extends ActionBarActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+
+
+            View rootView = inflater.inflate(R.layout.fragment_avatar, container, false);
             return rootView;
         }
     }

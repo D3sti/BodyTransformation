@@ -1,11 +1,29 @@
 <resources>
-    <string name="app_name">BodyTransformation</string>
+    <string name="app_name">Body-Transform</string>
 
-    <string name="title_section1">Section 1</string>
-    <string name="title_section2">Section 2</string>
-    <string name="title_section3">Section 3</string>
+    <string name="title_section1">Avatar</string>
+    <string name="title_section2">Input</string>
+    <string name="title_section3">Analyse</string>
 
-    <string name="hello_world">Hello world!</string>
-
+    <!-- COMMON STRINGS -->
     <string name="action_settings">Settings</string>
+    <string name="lb_no_value">n.a.</string>
+
+
+    <!-- AVATAR-FRAGMENT -->
+    <string name="lb_avatareBodyHeight">Körpergröße</string>
+    <string name="lb_avatareBodyWeight">Körpergewicht</string>
+    <string name="lb_avatareBodyAge">Alter</string>
+
+    <string name="lb_avatareResultBodyHeight"></string>
+    <string name="lb_avatareResultBodyWeight"></string>
+    <string name="lb_avatareResultBodyAge"></string>
+    <string name="btn_addNewState">Add new State</string>
+    <string name="img_avatareDescrContent">Show last body results</string>
+
+    <!-- ALERTS -->
+    <string name="messageValidHeight">Größe soll zwischen 150cm und 250cm liegen!</string>
+    <string name="messageValidWeight">Gewicht soll zwischen 40kg und 120kg liegen!</string>
+    <string name="messageValidAge">Alter soll zwischen 0 Jahre und 110 Jahre liegen!</string>
+
 </resources>
