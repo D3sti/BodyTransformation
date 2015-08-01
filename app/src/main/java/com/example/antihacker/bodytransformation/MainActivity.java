@@ -18,7 +18,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import entities.BodyInfo;
 import fragments.AvatarFragment;
 import fragments.BodyViewFragment;
 import fragments.InputFragment;
@@ -86,6 +88,21 @@ public class MainActivity extends ActionBarActivity implements
     @Override
     public void onFragmentInteraction(Uri uri) {
 
+        Toast toast = Toast.makeText(getApplicationContext(), "onFragmentInteraction.",
+                Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.TOP|Gravity.LEFT, 0, 0);
+        toast.show();
+    }
+
+    @Override
+    public void onAddNewState() {
+        Toast toast = Toast.makeText(getApplicationContext(), "onAddNewState.",
+                Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.TOP|Gravity.LEFT, 0, 0);
+        toast.show();
+
+        mViewPager.setCurrentItem(2,true);
+
     }
 
 
@@ -107,7 +124,7 @@ public class MainActivity extends ActionBarActivity implements
             //Open Fragments
             switch (position) {
                 case 0:
-                    return AvatarFragment.newInstance("A","B");
+                    return AvatarFragment.newInstance(new BodyInfo());
                 case 1:
                     return BodyViewFragment.newInstance("A", "B");
                 case 2:

@@ -1,6 +1,8 @@
 package fragments;
 
 import android.app.Activity;
+import android.app.ListFragment;
+import android.content.ContentUris;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -10,9 +12,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.antihacker.bodytransformation.R;
+
+import entities.BodyInfo;
+import interfaces.IBodyInfo;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,15 +30,15 @@ import com.example.antihacker.bodytransformation.R;
  * create an instance of this fragment.
  */
 public class AvatarFragment extends Fragment implements View.OnClickListener {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+
+    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+    private static final String ARG_BODY_INFO = "bodyInfo";
+
+
+    private IBodyInfo _bodyInfo;
     private Button _btnAddNewState;
+
 
     private OnFragmentInteractionListener mListener;
 
@@ -39,16 +46,15 @@ public class AvatarFragment extends Fragment implements View.OnClickListener {
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
      * @return A new instance of fragment AvatarFragment.
      */
-    // TODO: Rename and change types and number of parameters
-    public static AvatarFragment newInstance(String param1, String param2) {
+    public static AvatarFragment newInstance(IBodyInfo bodyInfo) {
         AvatarFragment fragment = new AvatarFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+
+        //Create Bundle with data to set args
+        Bundle args  = new Bundle();
+        args.putParcelable(ARG_BODY_INFO, bodyInfo );
+        //set the args to the fragment
         fragment.setArguments(args);
         return fragment;
     }
@@ -61,10 +67,9 @@ public class AvatarFragment extends Fragment implements View.OnClickListener {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
+        //Save the Data between fragment / landscape switch (will be destroyed)
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            _bodyInfo = getArguments().getParcelable(ARG_BODY_INFO);
         }
     }
 
@@ -72,8 +77,9 @@ public class AvatarFragment extends Fragment implements View.OnClickListener {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        //Kann erst zugewiesen werden, wenn die Activity vollständig geladen wurde!
+        //set after the activity is loaded completely
         _btnAddNewState = (Button) getActivity().findViewById(R.id.btn_addNewStatus);
+        _btnAddNewState.setOnClickListener(this);
     }
 
     @Override
@@ -85,13 +91,6 @@ public class AvatarFragment extends Fragment implements View.OnClickListener {
         //TextView textView = new TextView(getActivity());
         //textView.setText(R.string.hello_blank_fragment);
         //return textView;
-    }
-
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
     }
 
 
@@ -114,9 +113,11 @@ public class AvatarFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-
+        // Send the event and Uri to the host activity
+        if (mListener != null) {
+            mListener.onAddNewState();
+        }
     }
-
 
 
     /**
@@ -132,6 +133,7 @@ public class AvatarFragment extends Fragment implements View.OnClickListener {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         public void onFragmentInteraction(Uri uri);
+        public void onAddNewState();
     }
 
 }

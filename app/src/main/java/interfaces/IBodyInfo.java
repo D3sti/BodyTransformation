@@ -1,12 +1,11 @@
 package interfaces;
 
+import android.os.Parcelable;
+
 /**
  * Created by AntiHacker on 27.07.2015 at 13:28.
  */
-public interface IBodyInfo {
-
-
-
+public interface IBodyInfo extends Parcelable {
 
     //GETTER
     float get_height();

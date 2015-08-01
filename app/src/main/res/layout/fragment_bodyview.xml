@@ -9,4 +9,10 @@
         android:text="BODYVIEW"
         android:id="@+id/textView"
         android:layout_gravity="center_horizontal" />
+
+    <ImageSwitcher
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/imageSwitcher" />
+
 </LinearLayout>

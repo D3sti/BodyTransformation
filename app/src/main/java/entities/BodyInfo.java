@@ -1,11 +1,14 @@
 package entities;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import interfaces.IBodyInfo;
 
 /**
  * Created by AntiHacker on 27.07.2015 at 13:14.
  */
-public class BodyInfo implements IBodyInfo{
+public class BodyInfo implements Parcelable,IBodyInfo{
 
 
     //Fields
@@ -82,5 +85,23 @@ public class BodyInfo implements IBodyInfo{
             return bmi;
         }
         return  0;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+
+        //Content to transfer
+        dest.writeInt(_age);
+        dest.writeFloat(_height);
+        dest.writeFloat(_bmi);
+        dest.writeFloat(_weight);
+        dest.writeFloat(_chest);
+        dest.writeFloat(_belly);
+        dest.writeFloat(_biceps);
     }
 }
