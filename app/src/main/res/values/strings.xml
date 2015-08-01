@@ -11,15 +11,17 @@
 
 
     <!-- AVATAR-FRAGMENT -->
-    <string name="lb_avatareBodyHeight">Körpergröße</string>
-    <string name="lb_avatareBodyWeight">Körpergewicht</string>
-    <string name="lb_avatareBodyAge">Alter</string>
+    <string name="lb_avatarBodyHeight">Körpergröße</string>
+    <string name="lb_avatarBodyWeight">Körpergewicht</string>
+    <string name="lb_avatarBodyAge">Alter</string>
 
-    <string name="lb_avatareResultBodyHeight"></string>
-    <string name="lb_avatareResultBodyWeight"></string>
-    <string name="lb_avatareResultBodyAge"></string>
+    <string name="lb_avatarResultBodyHeight"></string>
+    <string name="lb_avatarResultBodyWeight"></string>
+    <string name="lb_avatarResultBodyAge"></string>
+
+
     <string name="btn_addNewState">Add new State</string>
-    <string name="img_avatareDescrContent">Show last body results</string>
+    <string name="img_avatarDescContent">Show last body results</string>
 
     <!-- ALERTS -->
     <string name="messageValidHeight">Größe soll zwischen 150cm und 250cm liegen!</string>

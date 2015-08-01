@@ -18,10 +18,11 @@
             android:id="@+id/img_avatar_bodyview"
             android:layout_margin="15dp"
             android:focusableInTouchMode="false"
-            android:contentDescription="@string/img_avatareDescrContent"
-            android:cropToPadding="true"
+            android:contentDescription="@string/img_avatarDescContent"
+            android:cropToPadding="false"
             android:src="@mipmap/ic_launcher"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:clickable="false" />
     </LinearLayout>
 
     <LinearLayout
@@ -50,7 +51,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="@string/lb_avatareBodyAge"
+                    android:text="@string/lb_avatarBodyAge"
                     android:id="@+id/txv_bodyage"
                     android:layout_margin="5dp" />
 
@@ -58,7 +59,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="@string/lb_avatareBodyWeight"
+                    android:text="@string/lb_avatarBodyWeight"
                     android:id="@+id/txv_bodyweight"
                     android:layout_margin="5dp" />
 
@@ -66,7 +67,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="@string/lb_avatareBodyHeight"
+                    android:text="@string/lb_avatarBodyHeight"
                     android:id="@+id/txv_bodyheight"
                     android:layout_margin="5dp" />
             </LinearLayout>
@@ -82,7 +83,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="@string/lb_avatareResultBodyWeight"
+                    android:text="@string/lb_avatarResultBodyWeight"
                     android:id="@+id/txv_resultbodyweight"
                     android:layout_margin="5dp"
                     android:hint="@string/lb_no_value" />
@@ -91,7 +92,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="@string/lb_avatareResultBodyWeight"
+                    android:text="@string/lb_avatarResultBodyWeight"
                     android:id="@+id/txv_resultbodyheight"
                     android:layout_margin="5dp"
                     android:hint="@string/lb_no_value" />
@@ -100,7 +101,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="@string/lb_avatareResultBodyHeight"
+                    android:text="@string/lb_avatarResultBodyHeight"
                     android:id="@+id/txv_resultbodyage"
                     android:layout_margin="5dp"
                     android:password="false"
